@@ -5,3 +5,6 @@ Para cumprir esse objetivo o trabalho foi dividido em componentes, cujo resumo d
 
 ### Componente graphicCreator
 Gerar um gráfico que mostra a variaço do número possivel de doenças conforme o médico faz perguntas ao paciente
+
+### Componente chooseQuestionOrder
+Faz uma busca na tabela dada para definir a ordem de perguntas que se elimina o maior número de doenças em potêncial.
