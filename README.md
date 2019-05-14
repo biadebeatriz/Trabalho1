@@ -8,3 +8,7 @@ Gerar um gráfico que mostra a variaço do número possivel de doenças conforme
 
 ### Componente chooseQuestionOrder
 Faz uma busca na tabela dada para definir a ordem de perguntas que se elimina o maior número de doenças em potêncial.
+
+## Componente funView
+Inicializa visualmente o programa, e ilustrar de maneira bonitinha os pacientes e o doutor.
+
