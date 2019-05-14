@@ -1,3 +1,4 @@
+package IterfaceGrafica.src;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -27,28 +28,47 @@ public class Principal {
         ZombieLabel Zombie = new ZombieLabel(1);
         JLabel LZombie = Zombie.getLabelZombie();
 
+        //FunView
+        FunViewLabel FunView = new FunViewLabel();
+        JLabel LFunView  = FunView.getFunViewLabel();
 
         //Create the menu bar.  Make it have a green background.
         JMenuBar greenMenuBar = new JMenuBar();
-        greenMenuBar.setOpaque(true);
-        greenMenuBar.setBackground(new Color(154, 165, 127));
-        greenMenuBar.setPreferredSize(new Dimension(200, 20));
+        //greenMenuBar.setOpaque(true);
+       // greenMenuBar.setBackground(new Color(154, 165, 127));
+       // greenMenuBar.setPreferredSize(new Dimension(300, 300));
+
+
+        ImageIcon imzombie = new ImageIcon("/home/beatriz/IdeaProjects/Trabalho1/src/IterfaceGrafica/imagens/zombie.png");
+        Scale sc = new Scale();
+        ImageIcon imzom= sc.scaleImage(imzombie, 30, 30);
+
+        JMenu menu = new JMenu("FunView");
+        menu.setIcon(imzom);
+        greenMenuBar.add(menu);
 
         //String Label
-        StringLabel sl = new StringLabel("Oque vc quer sua porra de zombie");
+        StringLabel sl = new StringLabel("Oque vc tem Zombie?");
 
 
 
         JPanel panel = new JPanel(new BorderLayout());
+        panel.setBackground(Color.WHITE);
+        panel.setSize(500,500);
+
+        //panel.add(LFunView,BorderLayout.BEFORE_FIRST_LINE);
         panel.add(LDoctora,BorderLayout.EAST);
         panel.add(LZombie,BorderLayout.WEST);
         panel.add(sl.getStringLabel(),BorderLayout.PAGE_END);
 
+        //frame.add(LFunView);
+        frame.setLocation(200,150);
         frame.add(panel);
         //frame.add(panelzombie);
         frame.setJMenuBar(greenMenuBar);
-        frame.setBackground(Color.WHITE);
-        frame.setSize(600,600);
+
+
+        frame.setSize(600,500);
         //Display the window.
         frame.pack();
         frame.setVisible(true);

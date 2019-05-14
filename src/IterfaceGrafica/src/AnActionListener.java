@@ -1,3 +1,4 @@
+package IterfaceGrafica.src;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -13,6 +14,6 @@ public class  AnActionListener implements ActionListener {
     public void actionPerformed(ActionEvent actionEvent) {
         System.out.println("Apertou o botao.");
         Principal pri = new Principal();
-        pri.main();
+        Principal.main();
     }
 }

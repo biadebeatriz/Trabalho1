@@ -1,3 +1,5 @@
+package IterfaceGrafica.src;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -8,13 +10,13 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+
 public class PaginaInicial {
     private static void createAndShowGUI() {
         //Create and set up the window.
         JFrame frame = new JFrame("Unhealh Zombie");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JPanel panel = new JPanel();
 
         //Create the menu bar.  Make it have a green background.
         JMenuBar greenMenuBar = new JMenuBar();
@@ -22,15 +24,12 @@ public class PaginaInicial {
         greenMenuBar.setBackground(new Color(154, 165, 127));
         greenMenuBar.setPreferredSize(new Dimension(200, 20));
 
-        //Create a yellow label to put in the content pane.
-        JLabel yellowLabel = new JLabel();
-        yellowLabel.setOpaque(true);
-        yellowLabel.setBackground(new Color(248, 213, 131));
-        yellowLabel.setPreferredSize(new Dimension(200, 180));
+
+
 
         //Imagem do zombie
-        ImageIcon wPic = new ImageIcon("/home/beatriz/IdeaProjects/Trabalho1/IterfaceGrafica/zombie1.jpg");
-        Image sc = wPic.getImage().getScaledInstance(200,200,Image.SCALE_DEFAULT);
+        ImageIcon wPic = new ImageIcon("/home/beatriz/IdeaProjects/Trabalho1/src/IterfaceGrafica/imagens/zombie/zombie1.jpg");
+        Image sc = wPic.getImage().getScaledInstance(300,300,Image.SCALE_DEFAULT);
         ImageIcon icon = new ImageIcon(sc);
         JLabel imagi = new JLabel(icon);
 
@@ -43,8 +42,9 @@ public class PaginaInicial {
         button.addActionListener(actionListener);
 
         //Set the menu bar and add the label to the content pane.
-        frame.setJMenuBar(greenMenuBar);
-        frame.getContentPane().add(yellowLabel, BorderLayout.CENTER);
+       // frame.setJMenuBar(greenMenuBar);
+        //frame.getContentPane().add(yellowLabel, BorderLayout.CENTER);
+        frame.setLocation(200,200);
         frame.getContentPane().add(imagi);
         frame.getContentPane().add(button, BorderLayout.PAGE_END);
 

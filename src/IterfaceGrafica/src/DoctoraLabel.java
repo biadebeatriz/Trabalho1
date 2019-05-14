@@ -1,3 +1,4 @@
+package IterfaceGrafica.src;
 import sun.swing.ImageIconUIResource;
 
 import java.awt.*;
@@ -16,7 +17,7 @@ public class DoctoraLabel {
     }
 
     public JLabel getLabelDoctora1(){
-        ImageIcon im = new ImageIcon("/home/beatriz/IdeaProjects/Trabalho1/IterfaceGrafica/imagens/doctor/doctora/doctora3.jpg");
+        ImageIcon im = new ImageIcon("//home/beatriz/IdeaProjects/Trabalho1/src/IterfaceGrafica/imagens/doctor/doctora/doctora1.jpg");
         ImageIcon scaleim = this.scaleImage(im, 200,300);
         JLabel label = new JLabel(scaleim, JLabel.RIGHT);
         return label;
