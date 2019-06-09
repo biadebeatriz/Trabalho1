@@ -1,4 +1,5 @@
 package Zumbi;
+import Interfaces.*;
 
 public class Patient implements IPatient {
     private int patientN = 0;
@@ -26,7 +27,7 @@ public class Patient implements IPatient {
 
         for (int a = 0; a < attributes.length - 1; a++)
             if (question.equalsIgnoreCase(attributes[a]))
-                result = (patientInstance[a].equals("t")) ? "yes" : "no";
+                result = (patientInstance[a].equals("t")) ? "t" : "f";
 
         return result;
     }

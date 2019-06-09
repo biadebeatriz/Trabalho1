@@ -1,6 +1,6 @@
-package Zumbi;
+package Interfaces;
 
-import Zumbi.ITableProducer;
+import Interfaces.*;
 
 public interface ITableProducerReceptacle {
     public void connect(ITableProducer producer);

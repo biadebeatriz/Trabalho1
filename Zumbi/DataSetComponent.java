@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import Interfaces.*;
 
 public class DataSetComponent implements IDataSet {
     private String dataSource = null;

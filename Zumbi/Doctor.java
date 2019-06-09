@@ -1,10 +1,11 @@
 package Zumbi;
 import java.io.BufferedReader;
+import Interfaces.*;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import graphicCreator.IgraphicCreator;
+
 import graphicCreator.graphicCreator;
 
 public class Doctor  implements IDoctor{
@@ -13,6 +14,7 @@ public class Doctor  implements IDoctor{
     private ITableProducer producer;
     private IResponder responder;
     private IgraphicCreator graphicCreator;
+    private IattTable attTable;
 
     public void connect(ITableProducer producer) {
         this.producer = producer;
@@ -24,6 +26,10 @@ public class Doctor  implements IDoctor{
     
     public void connect(IgraphicCreator graphicCreator) {
     	this.graphicCreator = graphicCreator;
+    }
+    
+    public void connect(IattTable attTable) {
+    	this.attTable = attTable;
     }
 
 
@@ -39,9 +45,14 @@ public class Doctor  implements IDoctor{
         for (int i=0; i < instances.length ;i++){
             pdoenca.add(i);
         }
+        
+        graphicCreator.update("Início");
+        
         while(pdoenca.size()>1 && qaskd<attributes.length - 1 ){
+        	System.out.println("qaskd é" + qaskd + "responder é " + responder.ask(attributes[qaskd]));
+        	attTable.update(qaskd, responder.ask(attributes[qaskd]));
         	graphicCreator.update(attributes[qaskd]);
-            if(responder.ask(attributes[qaskd]).equalsIgnoreCase("yes"))
+            if(responder.ask(attributes[qaskd]).equalsIgnoreCase("t"))
                 resposta = "t";
             else
                 resposta = "f";

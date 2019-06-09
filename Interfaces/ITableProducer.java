@@ -1,4 +1,4 @@
-package Zumbi;
+package Interfaces;
 
 public interface ITableProducer {
     String[] requestAttributes();

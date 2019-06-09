@@ -1,4 +1,4 @@
-package Zumbi;
+package Interfaces;
 
 public interface IDataSource {
     public String getDataSource();

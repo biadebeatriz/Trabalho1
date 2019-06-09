@@ -8,8 +8,8 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import java.awt.BorderLayout;
+import Interfaces.*;
 
-import Zumbi.ITableProducer;
 
 public class graphicCreator implements IgraphicCreator{
 	private ITableProducer producer;
@@ -26,10 +26,6 @@ public class graphicCreator implements IgraphicCreator{
     	possibleDiseasesGrid = new Vector<Vector<String>>();
     	askedQuestionsList = new Vector<String>();
     }
-    
-	public void connect(ITableProducer producer) {
-		this.producer = producer;
-	}
 	
 	private Vector<String> possibleDiseases() {
 		Vector<String> result = new Vector<String>();
@@ -44,13 +40,21 @@ public class graphicCreator implements IgraphicCreator{
 		return result;
 		
 	}
+	
+	public void connect(ITableProducer producer) {
+		this.producer = producer;
+    	this.instances = producer.requestInstances();
+    	this.attributes = producer.requestAttributes();
+	}
+	
+	public void updateTable(String[][] instances) {
+		this.instances = instances;
+	}
+
 	public void update(String askedQuestion) {
 		// Tem que dar um jeito de atualizar a fonte de dados toda vez que for dar update, pra isso a componente que deleta linhas
 		// vai ter que realmente deletar linhas do arquivo. Ideia: fazer o metodo requestAttributes e requestInstances chamar readDS
-		
-		this.attributes= producer.requestAttributes();
-        this.instances = producer.requestInstances();
-        
+		        
         askedQuestionsList.add(askedQuestion);
         possibleDiseasesGrid.add(possibleDiseases());
     
