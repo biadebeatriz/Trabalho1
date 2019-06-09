@@ -6,7 +6,8 @@ Classe | <caminho completo da classe com pacotes>` <br> Exemplo: `pt.c08componen
 Autores | Guilherme Correa
 Objetivo | Gerar um gráfico que mostra a variaço do número possivel de doenças conforme o médico faz perguntas ao paciente
 Interface | IgraphicCreator
-~
+	
+~~~
 
 public interface IgraphicCreator extends ITableReceptacle {
    public void update(String askedQuestion);
@@ -18,7 +19,7 @@ public interface ITableReceptacle {
 	public void connect(ITableProducer producer);
 }
 
-~
+~~~
 
 ## Detalhamento da Interface
 
