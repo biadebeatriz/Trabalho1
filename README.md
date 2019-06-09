@@ -88,3 +88,21 @@ Método | Objetivo
 # Componente funView
 Inicializa visualmente o programa, e ilustrar de maneira bonitinha os pacientes e o doutor.
 
+# Componentes compradas
+
+## Componente RedutorPossibilidades
+
+Pertencente ao grupo OsMatitos, essa componente foi usada em conexo com o attTable para se atualizar as tabelas do graphicCreator e do nextQuestion
+
+| Campo | Valor |
+|---|---|
+| Classe | *zumbi.Componentes.RedutorPossibilidades.RedutorPossibilidades* |
+| Autores | Felipe |
+| Objetivo | Remover da matriz os pacientes incompatíveis com a resposta |
+| Interface | *zumbi.Interfaces.IRedutorPossibilidades.IRedutorPossibilidades* |
+
+~~~
+public interface IRedutorPossibilidades {
+	public String[][] novaTabela(String[][] tabela, int sintoma, String resposta);
+}
+~~~
