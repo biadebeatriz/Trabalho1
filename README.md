@@ -8,7 +8,7 @@ Gerar um gráfico que mostra a variaço do número possivel de doenças conforme
 
 Campo | Valor
 ----- | -----
-Classe | <caminho completo da classe com pacotes>` <br> Exemplo: `pt.c08componentes.s20catalog.s10ds.DataSetComponent`
+Classe | graphicCreator.graphicCreator
 Autores | Guilherme Correa
 Objetivo | Gerar um gráfico que mostra a variaço do número possivel de doenças conforme o médico faz perguntas ao paciente
 Interface | IgraphicCreator
@@ -51,7 +51,39 @@ Método | Objetivo
 Faz uma busca na tabela dada para definir a ordem de perguntas que se elimina o maior número de doenças em potêncial.
 
 # Componente attTable
-Seguindo o pattern Observer, essa componente é responsável por diminuir a tabela a cada resposta obtida do paciente e notificar os observers, que no caso são as componentes nextQuestion e graphicCreator.
+Seguindo o pattern Observer, essa componente é responsável por diminuir a tabela a cada resposta obtida do paciente e notificar os observers, que no caso são as componentes nextQuestion e graphicCreator. Utiliza a componente RedutorPossibilidades do grupo OsMatitos.
+
+Campo | Valor
+----- | -----
+Classe | attTable.attTable
+Autores | Guilherme Correa
+Objetivo | Atualizar a tabela de sintomas e notificar as componentes que a utilizam.
+Interface | IattTable
+	
+~~~
+
+public interface IattTable extends ITableProducerReceptacle{
+	public void attach(ITableReceptacle tableReceptacle);
+	public void notifyReceptacle();
+	public void update(int pergunta, String resposta);
+	public void connect(IRedutorPossibilidades redutor);
+}
+
+
+~~~
+
+## Detalhamento da Interface
+
+## Interface IattTable`
+Interface provida para ser capaz de atualizar a tabela e notificar as componentes que a utilizam, ela extende a interface ITableProducerReceptacle para obter uma tabela inicial.
+
+Método | Objetivo
+-------| --------
+`attach` | Conecta uma componente observadora a ela, afim de a notificar quando a tabela é atualizada.
+`notifyReceptacle` | Notifica as componentes que utilizam a tabela de que ela foi alterada.
+`update` | Atualiza a tabela de acordo com a resposta de uma determinada pergunta feita ao paciente.
+`connect` | Se conecta a componente RedutorPossibilidades
+
 
 # Componente funView
 Inicializa visualmente o programa, e ilustrar de maneira bonitinha os pacientes e o doutor.
