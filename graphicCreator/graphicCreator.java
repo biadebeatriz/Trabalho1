@@ -1,4 +1,4 @@
-package Trabalho1.graphicCreator;
+package graphicCreator;
 
 import java.util.Arrays;
 import java.util.Vector;
@@ -7,10 +7,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import java.awt.BorderLayout;
 
-import Trabalho1.src.Zumbi.ITableProducer;
+import Zumbi.ITableProducer;
 
-public class graphicCreator extends JFrame implements IgraphicCreator{
+public class graphicCreator implements IgraphicCreator{
 	private ITableProducer producer;
 	private String[] attributes;
     private String[][] instances;
@@ -22,7 +23,6 @@ public class graphicCreator extends JFrame implements IgraphicCreator{
 	
 	
     public graphicCreator() {
-    	super("Possibles diseases according to the asked questions");
     	possibleDiseasesGrid = new Vector<Vector<String>>();
     	askedQuestionsList = new Vector<String>();
     }
@@ -40,6 +40,7 @@ public class graphicCreator extends JFrame implements IgraphicCreator{
 			}
 		}
 		
+		
 		return result;
 		
 	}
@@ -56,36 +57,50 @@ public class graphicCreator extends JFrame implements IgraphicCreator{
     }
 	
 	// Transforma linhas em colunas para usar na tabela
-	private Vector<String[]> organizeData() {
-		Vector<String[]> result = new Vector<String[]>();
-		Vector<String> aux = new Vector<String>();
-		Object[] aux_obj;
-		
+	private Vector<Vector<String>> organizeData() {
+		Vector<Vector<String>> result = new Vector<Vector<String>>();
+		Vector<String> aux;
+		//Object[] aux_obj;
 		
 		// erro no result.add
 		for (int i = 0; i < possibleDiseasesGrid.get(0).size(); i++) {
-			aux.clear();
+			aux = new Vector<String>();
 			for (int j = 0; j < askedQuestionsList.size();j++) {
-				if (possibleDiseasesGrid.get(j).size() > i)
+				if (possibleDiseasesGrid.get(j).size() > i) {
 					aux.add(possibleDiseasesGrid.get(j).get(i));
+				}
+				else
+					aux.add("");
 			}
-			aux_obj = aux.toArray();
-			result.add(Arrays.copyOf(aux_obj, aux_obj.length,String[].class));
+
+			//System.out.println("-------------------");
+			//for (String doenca : aux)
+			//	System.out.println(doenca);
+			//System.out.println("-------------------");
+			result.add(aux);
+			//aux_obj = aux.toArray();
+			//result.add(Arrays.copyOf(aux_obj, aux_obj.length,String[].class));
 		}
+		
+		
 		return result;
 	}
 	
     public void createGraphic() {
-    	
-    	
-    	int i = 0;
-    }
-    public void connectTable(ITableProducer producer) {
-    	this.producer = producer;
+    	JFrame frame = new JFrame("Possibles diseases according to the asked questions");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        
+        JTable table = new JTable(organizeData(), askedQuestionsList);
+
+        JScrollPane scrollPane = new JScrollPane(table);
+        frame.add(scrollPane, BorderLayout.CENTER);
+        frame.setSize(300, 150);
+        frame.setVisible(true);
     }
 
     public static void main(String[] args) {
     	
-
+    	System.out.println("oie");
     }
 }

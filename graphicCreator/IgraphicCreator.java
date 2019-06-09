@@ -1,4 +1,4 @@
-package Trabalho1.graphicCreator;
+package graphicCreator;
 
 import Trabalho1.src.Zumbi.ITableProducer;
 import Trabalho1.src.Zumbi.ITableProducerReceptacle;
@@ -6,5 +6,4 @@ import Trabalho1.src.Zumbi.ITableProducerReceptacle;
 public interface IgraphicCreator extends ITableProducerReceptacle{
 	  public void update(String askedQuestion);
 	  public void createGraphic();
-	  public void connectTable(ITableProducer producer);
 }
