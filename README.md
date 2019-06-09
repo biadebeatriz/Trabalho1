@@ -3,7 +3,7 @@ O objetivo desse trabalho é a implementação de um programa capaz de simular o
 
 Para cumprir esse objetivo o trabalho foi dividido em componentes, cujo resumo de cada uma está abaixo e sua documentação detalhada em sua respectiva pasta.
 
-### Componente graphicCreator
+# Componente graphicCreator
 Gerar um gráfico que mostra a variaço do número possivel de doenças conforme o médico faz perguntas ao paciente.
 
 Campo | Valor
@@ -47,12 +47,12 @@ Método | Objetivo
 
 
 
-### Componente nextQuestion
+# Componente nextQuestion
 Faz uma busca na tabela dada para definir a ordem de perguntas que se elimina o maior número de doenças em potêncial.
 
-### Componente attTable
+# Componente attTable
 Seguindo o pattern Observer, essa componente é responsável por diminuir a tabela a cada resposta obtida do paciente e notificar os observers, que no caso são as componentes nextQuestion e graphicCreator.
 
-### Componente funView
+# Componente funView
 Inicializa visualmente o programa, e ilustrar de maneira bonitinha os pacientes e o doutor.
 
