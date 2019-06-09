@@ -6,8 +6,6 @@ Para cumprir esse objetivo o trabalho foi dividido em componentes, cujo resumo d
 ### Componente graphicCreator
 Gerar um gráfico que mostra a variaço do número possivel de doenças conforme o médico faz perguntas ao paciente.
 
-# Componente graphicCreator
-
 Campo | Valor
 ----- | -----
 Classe | <caminho completo da classe com pacotes>` <br> Exemplo: `pt.c08componentes.s20catalog.s10ds.DataSetComponent`
@@ -31,7 +29,7 @@ public interface ITableReceptacle {
 
 ## Detalhamento da Interface
 
-### Interface IgraphicCreator`
+## Interface IgraphicCreator`
 Interface provida para ser capaz de criar um grafico conforme Objetivo.
 
 Método | Objetivo
@@ -39,7 +37,7 @@ Método | Objetivo
 `update` | Adiciona um "estado" a mais no gráfico das possiveis doenças a partir do estado atual da tabela fonte de dados.
 `createGraphic` | Cria o gráfico final baseado nos estados que já foram adicionados pelo método update e o mostra na tela.
 
-### Interface ITableReceptacle
+## Interface ITableReceptacle
 Interface dos observers de attTable, cujo objetivo é atualizar a tabela desses componentes.
 
 Método | Objetivo
