@@ -36,9 +36,22 @@ public class Doctor  implements IDoctor{
     public void startInterview() {
         String attributes[] = producer.requestAttributes();
         String instances[][] = producer.requestInstances();
+        int n_questions = 0;
         String symptomsP[] = new String[attributes.length - 1];
         String diagnostic = "I don't know";
-        ArrayList<Integer> pdoenca = new ArrayList<Integer>();
+        
+        graphicCreator.update("Início");
+
+        
+        
+        while ((graphicCreator.possibleDiseases()).size() > 1 && n_questions < attributes.length - 1) {
+        	next_q = nextQuestion.NQ();
+        	attTable.update(next_q, responder.ask(attributes[next_q]));
+        	graphicCreator.update(attributes[next_q]);
+        }
+        
+        
+        /* ArrayList<Integer> pdoenca = new ArrayList<Integer>();
         int qaskd = 0;
         boolean igual=true;
         String resposta;
@@ -46,7 +59,6 @@ public class Doctor  implements IDoctor{
             pdoenca.add(i);
         }
         
-        graphicCreator.update("Início");
         
         while(pdoenca.size()>1 && qaskd<attributes.length - 1 ){
         	System.out.println("qaskd é" + qaskd + "responder é " + responder.ask(attributes[qaskd]));
@@ -73,7 +85,7 @@ public class Doctor  implements IDoctor{
                     System.out.println("são diferentes");
                 igual=false;
             }
-        }
+        }*/
         diagnostic = instances[pdoenca.get(0)][attributes.length-1];
         if(!igual){
             for(int i = 1; i < pdoenca.size();i++){

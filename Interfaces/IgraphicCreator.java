@@ -1,9 +1,9 @@
 package Interfaces;
 
-import Trabalho1.src.Zumbi.ITableProducer;
-import Trabalho1.src.Zumbi.ITableProducerReceptacle;
+import java.util.Vector;
 
 public interface IgraphicCreator extends ITableReceptacle{
 	  public void update(String askedQuestion);
 	  public void createGraphic();
+	  public Vector<String> possibleDiseases();
 }

@@ -27,7 +27,7 @@ public class graphicCreator implements IgraphicCreator{
     	askedQuestionsList = new Vector<String>();
     }
 	
-	private Vector<String> possibleDiseases() {
+	public Vector<String> possibleDiseases() {
 		Vector<String> result = new Vector<String>();
 		
 		for (int i = 0; i < instances.length; i++) {
