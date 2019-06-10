@@ -1,7 +1,7 @@
 # Trabalho Grupo Um
-O objetivo desse trabalho é a implementação de um programa capaz de simular o diagnóstico da doença de um Paciente por um Doutor através de diversas perguntas feitas pelo mesmo de forma com que o diagnóstico seja feito rapidamente, ou seja, menos perguntas sejam necessárias. Além disso, também foram implementadas interfaces gráficas para melhor visualização da situção e dos resultados.
+O objetivo desse trabalho é a implementação de um programa capaz de simular o diagnóstico da doença de um Paciente por um Doutor através de diversas perguntas feitas pelo mesmo de forma com que o diagnóstico seja feito rapidamente, ou seja, menos perguntas sejam necessárias. Além disso, também foram implementadas interfaces gráficas para melhor visualização da situação e dos resultados.
 
-Para cumprir esse objetivo o trabalho foi dividido em componentes, cujo resumo de cada uma está abaixo.
+Para cumprir esse objetivo o trabalho foi dividido em componentes, cujo resumo de cada um está abaixo.
 
 # Componente graphicCreator
 Esse componente é responsável por gerar um gráfico que mostra a variação do número possivel de doenças ao longo da consulta.
@@ -37,7 +37,7 @@ Método | Objetivo
 `update` | Adiciona um "estado" a mais no gráfico das possiveis doenças a partir do estado atual da tabela fonte de dados.
 `createGraphic` | Cria o gráfico final baseado nos estados que já foram adicionados pelo método update e o mostra na tela.
 
-## Interface ITableReceptacle
+### Interface ITableReceptacle
 Interface dos observers de attTable, cujo objetivo é atualizar a tabela desses componentes.
 
 Método | Objetivo
@@ -47,7 +47,7 @@ Método | Objetivo
 
 
 # Componente nextQuestion
-Faz uma busca na tabela dada para definir a ordem de perguntas que se elimina o maior número de doenças em potencial.
+Componente que faz uma busca na tabela dada para definir a ordem de perguntas que se elimina o maior número de doenças em potencial.
 
 Campo | Valor
 ----- | -----
