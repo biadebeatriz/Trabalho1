@@ -29,7 +29,7 @@ public interface ITableReceptacle {
 
 ## Detalhamento da Interface
 
-## Interface IgraphicCreator
+### Interface IgraphicCreator
 Interface provida para ser capaz de criar um grafico conforme Objetivo.
 
 Método | Objetivo
@@ -64,12 +64,13 @@ public interface INextQuestion extends ITableProducer{
 
 ## Detalhamento da Interface
 
-### Interface INextQuestion`
+### Interface INextQuestion
 Interface provida capaz de analisar a tabela de doenças e à partir dela retornar a próxima melhor pergunta.
  
 Método | Objetivo
 -------| --------
 `nextQ` | Analisa a tabela, coluna por coluna e vê qual delas tem a melhor distribuição de F e V para eliminar o maior caso de doenças possível na próxima pergunta. O objeto mantém atualizado quais perguntas já foram feitas para não mandar o médico fazer a mesma pergunta 2x.
+
 
 # Componente attTable
 Seguindo o pattern Observer, essa componente é responsável por diminuir a tabela a cada resposta obtida do paciente e notificar os observers, que no caso são as componentes nextQuestion e graphicCreator. Utiliza a componente RedutorPossibilidades do grupo OsMatitos.
@@ -95,7 +96,7 @@ public interface IattTable extends ITableProducerReceptacle{
 
 ## Detalhamento da Interface
 
-## Interface IattTable
+### Interface IattTable
 Interface provida para ser capaz de atualizar a tabela e notificar as componentes que a utilizam, ela extende a interface ITableProducerReceptacle para obter uma tabela inicial.
 
 Método | Objetivo
