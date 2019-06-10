@@ -111,10 +111,10 @@ Pertencente ao grupo Clube do Hardware.
 
 | Campo | Valor |
 |---|---|
-| Classe | *pt.clubedohardware.userinterface.UserInterface* |
+| Classe | pt.clubedohardware.userinterface.UserInterface |
 | Autores | Willian Ozako, Lucas, Douglas Yoshioka |
 | Objetivo | Criar animação das interações entre o médico e o paciente |
-| Interface | *IAnimation* |
+| Interface | IAnimation |
 
 
 Método | Objetivo
