@@ -29,7 +29,7 @@ public interface ITableReceptacle {
 
 ## Detalhamento da Interface
 
-## Interface IgraphicCreator`
+## Interface IgraphicCreator
 Interface provida para ser capaz de criar um grafico conforme Objetivo.
 
 Método | Objetivo
@@ -74,7 +74,7 @@ public interface IattTable extends ITableProducerReceptacle{
 
 ## Detalhamento da Interface
 
-## Interface IattTable`
+## Interface IattTable
 Interface provida para ser capaz de atualizar a tabela e notificar as componentes que a utilizam, ela extende a interface ITableProducerReceptacle para obter uma tabela inicial.
 
 Método | Objetivo
