@@ -1,16 +1,16 @@
 # Trabalho Grupo Um
-O objetivo desse trabalho é a implementação de um programa capaz de simular o diagnóstico da doença de um Paciente por um Doutor através de diversas perguntas feitas pelo mesmo de forma com que o diagnóstico seja feito rapidamente, ou seja, menos perguntas sejam necessárias. Além disso também serão implementadas interfaces gráficas para melhor visualização da situção e dos resultados.
+O objetivo desse trabalho é a implementação de um programa capaz de simular o diagnóstico da doença de um Paciente por um Doutor através de diversas perguntas feitas pelo mesmo de forma com que o diagnóstico seja feito rapidamente, ou seja, menos perguntas sejam necessárias. Além disso também foram implementadas interfaces gráficas para melhor visualização da situção e dos resultados.
 
 Para cumprir esse objetivo o trabalho foi dividido em componentes, cujo resumo de cada uma está abaixo.
 
 # Componente graphicCreator
-Gerar um gráfico que mostra a variaço do número possivel de doenças conforme o médico faz perguntas ao paciente.
+Esse componente é responsável por gerar gráfico que mostra a variação do número possivel de doenças ao longo da entrevista.
 
 Campo | Valor
 ----- | -----
 Classe | graphicCreator.graphicCreator
 Autores | Guilherme Correa
-Objetivo | Gerar um gráfico que mostra a variaço do número possivel de doenças conforme o médico faz perguntas ao paciente
+Objetivo | Gerar um gráfico que mostra a variação do número possivel de doenças conforme o médico faz perguntas ao paciente
 Interface | IgraphicCreator
 	
 ~~~
@@ -86,7 +86,7 @@ Método | Objetivo
 
 
 # Componente funView
-Inicializa visualmente o programa, e ilustrar de maneira bonitinha os pacientes e o doutor.
+Inicializa visualmente o programa e ilustra de maneira bonitinha os pacientes e o doutor.
 
 # Componentes compradas
 
@@ -107,7 +107,7 @@ Método | Objetivo
 
 ## Componente UserInterface
 
-Pertencente ao grupo Clube do Hardware.
+Pertencente ao grupo Clube do Hardware, essa componente foi usada para deixar mais ilustrativo a entrevista entre o Paciente e o Doutor.
 
 | Campo | Valor |
 |---|---|
