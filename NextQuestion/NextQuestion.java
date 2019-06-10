@@ -1,25 +1,46 @@
-public interface NextQuestion {
-    public String nextQ(String tabela[[]]);
-  }
-  
-  public class NQ implements NextQuestion{
+package NextQuestion;
+import java.util.ArrayList;
+import Interfaces.*;
+
+public class NextQuestion implements INextQuestion{
+      private String[][] tabela;
+      private ITableProducer producer;
+      private String[] attributes;
+      private ArrayList<Integer> askdQ= new ArrayList<Integer>();
       
-      public String nextQ(String tabela[][]){
-        int nlinha = tabela.getRowDimension(),ncoluna = tabela.getColumnDimension();
-        int cont=0,ideal=(nlinha-1)/2,maxf=0,colmax=0;
-        for(int i=1; i<=ncoluna;i++){
-            for(int j=1;j<=nlinha;j++){
-                if(tabela[j][i]=='f'){
+      
+      public void updateTable(String[][] instances) {
+  		tabela = instances;
+      }
+      
+      public void connect(ITableProducer producer) {
+  		this.producer = producer;
+      	tabela = producer.requestInstances();
+      	this.attributes = producer.requestAttributes();
+  	  }
+      
+      public int nextQ(){
+        int nlinha = tabela.length;
+        int ncoluna = tabela[0].length - 1;
+        int cont=0,ideal=(nlinha)/2,maxf=0,colmax=0;
+        
+        
+        
+        for(int i=0; i<ncoluna;i++){
+        	cont = 0;
+            for(int j=0;j<nlinha;j++){
+                if(tabela[j][i].equalsIgnoreCase("f") ){
                     cont++;
                 }
             }
-            if(Math.abs(cont-ideal)<Math.abs(maxf-ideal){
+            if(Math.abs(cont-ideal)<Math.abs(maxf-ideal) && !askdQ.contains(i)){
                 maxf=cont;
                 colmax=i;
             }
 
         }
-        return tabela[0][colmax];
+        askdQ.add(colmax);
+        return colmax;
       }
       
   }

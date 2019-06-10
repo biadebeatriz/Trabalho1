@@ -41,10 +41,14 @@ public class graphicCreator implements IgraphicCreator{
 		
 	}
 	
+	
 	public void connect(ITableProducer producer) {
 		this.producer = producer;
     	this.instances = producer.requestInstances();
     	this.attributes = producer.requestAttributes();
+    	// Primeira coluna da tabela deve ter as doenças iniciais
+        askedQuestionsList.add("Before any question");
+        possibleDiseasesGrid.add(possibleDiseases());
 	}
 	
 	public void updateTable(String[][] instances) {
@@ -55,7 +59,7 @@ public class graphicCreator implements IgraphicCreator{
 		// Tem que dar um jeito de atualizar a fonte de dados toda vez que for dar update, pra isso a componente que deleta linhas
 		// vai ter que realmente deletar linhas do arquivo. Ideia: fazer o metodo requestAttributes e requestInstances chamar readDS
 		        
-        askedQuestionsList.add(askedQuestion);
+        askedQuestionsList.add("After asking about "+askedQuestion);
         possibleDiseasesGrid.add(possibleDiseases());
     
     }

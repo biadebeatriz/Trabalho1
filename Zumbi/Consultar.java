@@ -2,6 +2,7 @@ package Zumbi;
 import Interfaces.*;
 import graphicCreator.*;
 import attTable.*;
+import NextQuestion.*;
 import zumbi.Interfaces.IRedutorPossibilidades.*;
 import zumbi.Componentes.*;
 import zumbi.Componentes.RedutorPossibilidades.FabricaRedutor;
@@ -11,7 +12,7 @@ public class Consultar {
 
         // instanciando o componente DataSet
         IDataSet dataset = new DataSetComponent();
-        dataset.setDataSource("/home/guiloko/eclipse-workspace/Projeto322/src/zombie-health-spreadsheet-ml-training.csv");
+        dataset.setDataSource("/home/guiloko/eclipse-workspace/Projeto322/src/spreadsheet.csv");
 
 // instanciando o componente paciente
         IPatient aPatient = new Patient();
@@ -27,28 +28,33 @@ public class Consultar {
 // Conectando-o ao componente dataset         
         cgraphic.connect(dataset);
         
-// Instanciando o componente attTable
-        IattTable attTable = attTableFactory.create();
+// instanciando o componente nextQuestion 
+        INextQuestion nextQuestion = NQFactory.create();
+// conectando-a a componente dataset        
+        nextQuestion.connect(dataset);
         
+// Instanciando o componente attTable
+        IattTable attTable = attTableFactory.create();       
 // Conectando-o ao componente dataset e redutor        
         attTable.connect(dataset);
-        attTable.connect(redutor);
-        
-// Conectando-o ao componente graphiccreator        
+        attTable.connect(redutor);       
+// Conectando-o ao componente graphiccreator e nextQuestion, segundo o pattern Observer        
         attTable.attach(cgraphic);
+        attTable.attach(nextQuestion);
         
         
 // instanciando o componente doutor louco
         IDoctor cDoctor = new Doctor();
-
 // conectando-o ao componente DataSet
         cDoctor.connect(dataset);
-        
+// conectando-o ao componente attTable      
         cDoctor.connect(attTable);
-
+// conectando-o ao componente nextQuestion
+        cDoctor.connect(nextQuestion);
+// conectando-o ao componente graphicCreator
+        cDoctor.connect(cgraphic);
 // conectando-o ao componente paciente
         cDoctor.connect(aPatient);
-        cDoctor.connect(cgraphic);
 // executando a entrevista
         cDoctor.startInterview();
 
