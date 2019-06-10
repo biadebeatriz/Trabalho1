@@ -1,20 +1,23 @@
 package attTable;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Vector;
 
+import View.IView;
 import Zumbi.*;
 import zumbi.Interfaces.IRedutorPossibilidades.*;
 import Interfaces.*;
 
 public class attTable implements IattTable{
-	private Vector<ITableReceptacle> receptacles;
+	private ArrayList<ITableReceptacle> receptacles;
 	private ITableProducer producer;
 	private String[] attributes;
     private String[][] instances;
     private IRedutorPossibilidades redutor;
+    private IView View;
     
 	public attTable() {
-		receptacles = new Vector<ITableReceptacle>();
+		receptacles = new ArrayList<ITableReceptacle>();
 	}
 	
 	// Conecta com o DScomponent e pega a primeira tabela
@@ -24,7 +27,10 @@ public class attTable implements IattTable{
         this.instances = producer.requestInstances();
 	}
 	
-	
+	public void connect(IView view){
+	    this.View = view;
+    }
+
 	public void connect(IRedutorPossibilidades redutor) {
 		this.redutor = redutor;
 	}
@@ -37,8 +43,13 @@ public class attTable implements IattTable{
 		for (ITableReceptacle receptacle: receptacles)
 			receptacle.updateTable(instances);
 	}
-	
+
+	public void giveDiagnostic(String doenca){
+	    this.View.diagnostico(doenca);
+    }
+
 	public void update(int pergunta, String resposta) {
+	    this.View.updateV(this.attributes, pergunta, resposta);
 		System.out.println("instancias antes");
     	for (int i = 0; i < instances.length ; i++) {
     		for (int j =0 ; j < instances[0].length ; j++) {
