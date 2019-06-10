@@ -106,9 +106,6 @@ Método | Objetivo
 `connect` | Se conecta a componente RedutorPossibilidades
 
 
-# Componente funView
-Inicializa visualmente o programa e ilustra de maneira bonitinha os pacientes e o doutor.
-
 # Componentes Compradas
 
 ## Componente RedutorPossibilidades
