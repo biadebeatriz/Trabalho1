@@ -4,7 +4,7 @@ O objetivo desse trabalho é a implementação de um programa capaz de simular o
 Para cumprir esse objetivo o trabalho foi dividido em componentes, cujo resumo de cada uma está abaixo.
 
 # Componente graphicCreator
-Esse componente é responsável por gerar um gráfico que mostra a variação do número possivel de doenças ao longo da entrevista.
+Esse componente é responsável por gerar um gráfico que mostra a variação do número possivel de doenças ao longo da consulta.
 
 Campo | Valor
 ----- | -----
@@ -48,7 +48,7 @@ Método | Objetivo
 
 
 # Componente nextQuestion
-Faz uma busca na tabela dada para definir a ordem de perguntas que se elimina o maior número de doenças em potêncial.
+Faz uma busca na tabela dada para definir a ordem de perguntas que se elimina o maior número de doenças em potencial.
 
 # Componente attTable
 Seguindo o pattern Observer, essa componente é responsável por diminuir a tabela a cada resposta obtida do paciente e notificar os observers, que no caso são as componentes nextQuestion e graphicCreator. Utiliza a componente RedutorPossibilidades do grupo OsMatitos.
@@ -107,7 +107,7 @@ Método | Objetivo
 
 ## Componente UserInterface
 
-Pertencente ao grupo Clube do Hardware, essa componente foi usada para deixar mais ilustrativo a entrevista entre o Paciente e o Doutor.
+Pertencente ao grupo Clube do Hardware, essa componente foi usada para deixar mais ilustrativo a consulta entre o Paciente e o Doutor.
 
 | Campo | Valor |
 |---|---|
