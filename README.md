@@ -4,7 +4,7 @@ O objetivo desse trabalho é a implementação de um programa capaz de simular o
 Para cumprir esse objetivo o trabalho foi dividido em componentes, cujo resumo de cada uma está abaixo.
 
 # Componente graphicCreator
-Esse componente é responsável por gerar gráfico que mostra a variação do número possivel de doenças ao longo da entrevista.
+Esse componente é responsável por gerar um gráfico que mostra a variação do número possivel de doenças ao longo da entrevista.
 
 Campo | Valor
 ----- | -----
