@@ -46,7 +46,6 @@ Método | Objetivo
 `connect` | Conecta com uma fonte de dados inicial.
 
 
-
 # Componente nextQuestion
 Faz uma busca na tabela dada para definir a ordem de perguntas que se elimina o maior número de doenças em potencial.
 
@@ -110,7 +109,7 @@ Método | Objetivo
 # Componente funView
 Inicializa visualmente o programa e ilustra de maneira bonitinha os pacientes e o doutor.
 
-# Componentes compradas
+# Componentes Compradas
 
 ## Componente RedutorPossibilidades
 
@@ -137,7 +136,6 @@ Pertencente ao grupo Clube do Hardware, essa componente foi usada para deixar ma
 | Autores | Willian Ozako, Lucas, Douglas Yoshioka |
 | Objetivo | Criar animação das interações entre o médico e o paciente |
 | Interface | IAnimation |
-
 
 Método | Objetivo
 -------| --------
