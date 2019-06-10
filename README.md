@@ -117,10 +117,10 @@ Pertencente ao grupo OsMatitos, essa componente foi usada em conexo com o attTab
 
 | Campo | Valor |
 |---|---|
-| Classe | zumbi.Componentes.RedutorPossibilidades.RedutorPossibilidades |
+| Classe | *zumbi.Componentes.RedutorPossibilidades.RedutorPossibilidades* |
 | Autores | Felipe |
 | Objetivo | Remover da matriz os pacientes incompatíveis com a resposta |
-| Interface | IRedutorPossibilidades |
+| Interface | *zumbi.Interfaces.IRedutorPossibilidades.IRedutorPossibilidades* |
 
 Método | Objetivo
 -------| --------
