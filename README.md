@@ -103,7 +103,7 @@ Pertencente ao grupo OsMatitos, essa componente foi usada em conexo com o attTab
 
 Método | Objetivo
 -------| --------
-´novaTabela` | Recebe o sintoma e remove da tabela os pacientes que não condizem com a resposta obtida, retornando uma tabela atualizada
+`novaTabela` | Recebe o sintoma e remove da tabela os pacientes que não condizem com a resposta obtida, retornando uma tabela atualizada
 
 ## Componente UserInterface
 
