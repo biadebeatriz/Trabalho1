@@ -101,8 +101,26 @@ Pertencente ao grupo OsMatitos, essa componente foi usada em conexo com o attTab
 | Objetivo | Remover da matriz os pacientes incompatíveis com a resposta |
 | Interface | *zumbi.Interfaces.IRedutorPossibilidades.IRedutorPossibilidades* |
 
-~~~
-public interface IRedutorPossibilidades {
-	public String[][] novaTabela(String[][] tabela, int sintoma, String resposta);
-}
-~~~
+Método | Objetivo
+-------| --------
+`novaTabela | Recebe o sintoma e remove da tabela os pacientes que não condizem com a resposta obtida, retornando uma tabela atualizada
+
+## Componente UserInterface
+
+Pertencente ao grupo Clube do Hardware.
+
+| Campo | Valor |
+|---|---|
+| Classe | *pt.clubedohardware.userinterface.UserInterface* |
+| Autores | Willian Ozako, Lucas, Douglas Yoshioka |
+| Objetivo | Criar animação das interações entre o médico e o paciente |
+| Interface | *IAnimation* |
+
+
+Método | Objetivo
+-------| --------
+`story` | Recebe como parâmetro dois vetores, o primeiro que armazena as falas das personagens e o segundo registra quem fala na n-ésima fala. Exemplo: n-ésima posição do 1o vetor - "You have smallpox." - e na n-ésima posição do 2o vetor - "doctor" - logo fica: "Doctor: You have smallpox."IMPORTANTE: Para gerar destaque em uma expressão como o nome da doença ou o do sintoma, coloque a expressão entre asteriscos(*). EX: "You have *smallpox*." -> "You have smallpox."
+`setWindowName` | Altera/adiciona título da janela da interface. Para isso ele recebe uma String name que armazena o nome desejado.
+`setTempo`  | Recebe como parâmetro String v que deve ser igual em valor à slow,fast ou default. Ele configura a velocidade do texto "corrido"
+`setPacientName`  | Recebe como parâmetro a String pacName que é o nome do paciente, guarda esse nome para ser impresso na interface gráfica.
+`setDocName`  | Recebe como parâmetro a String docName que é o nome do doutor, guardando o nome para ser impresso na interface gráfica.
