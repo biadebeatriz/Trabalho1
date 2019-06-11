@@ -13,7 +13,7 @@ import javax.imageio.ImageIO;
 public class PaginaInicial {
     public static void createAndShowGUI() {
         //Create and set up the window.
-        JFrame frame = new JFrame("Unhealh Zombie");
+        JFrame frame = new JFrame("Grupo 1");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel panel = new JPanel();

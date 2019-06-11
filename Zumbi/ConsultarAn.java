@@ -25,7 +25,7 @@ public class ConsultarAn {
         IRedutorPossibilidades redutor = FabricaRedutor.criaRedutor();
 
 // instanciando o componente graphicCreator
-        IgraphicCreator cgraphic = graphicCreatorFactory.create();
+        IgraphicCreator cgraphic = graphicCreatorFactory.create(false);
 // Conectando-o ao componente dataset
         cgraphic.connect(dataset);
 

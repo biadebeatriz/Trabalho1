@@ -20,11 +20,13 @@ public class graphicCreator implements IgraphicCreator{
     private JPanel panel;
     private JTable table;
     private JScrollPane scrollPane;
+    private boolean Isvisible;
 	
 	
-    public graphicCreator() {
+    public graphicCreator(boolean isGrafico) {
     	possibleDiseasesGrid = new Vector<Vector<String>>();
     	askedQuestionsList = new Vector<String>();
+    	this.Isvisible = isGrafico;
     }
 
 	public Vector<String> possibleDiseases() {
@@ -46,7 +48,6 @@ public class graphicCreator implements IgraphicCreator{
 		this.producer = producer;
     	this.instances = producer.requestInstances();
     	this.attributes = producer.requestAttributes();
-    	// Primeira coluna da tabela deve ter as doenças iniciais
         askedQuestionsList.add("Before any question");
         possibleDiseasesGrid.add(possibleDiseases());
 	}
@@ -56,9 +57,7 @@ public class graphicCreator implements IgraphicCreator{
 	}
 
 	public void update(String askedQuestion) {
-		// Tem que dar um jeito de atualizar a fonte de dados toda vez que for dar update, pra isso a componente que deleta linhas
-		// vai ter que realmente deletar linhas do arquivo. Ideia: fazer o metodo requestAttributes e requestInstances chamar readDS
-		        
+
         askedQuestionsList.add("After asking about "+askedQuestion);
         possibleDiseasesGrid.add(possibleDiseases());
     
@@ -68,9 +67,7 @@ public class graphicCreator implements IgraphicCreator{
 	private Vector<Vector<String>> organizeData() {
 		Vector<Vector<String>> result = new Vector<Vector<String>>();
 		Vector<String> aux;
-		//Object[] aux_obj;
-		
-		// erro no result.add
+
 		for (int i = 0; i < possibleDiseasesGrid.get(0).size(); i++) {
 			aux = new Vector<String>();
 			for (int j = 0; j < askedQuestionsList.size();j++) {
@@ -81,30 +78,21 @@ public class graphicCreator implements IgraphicCreator{
 					aux.add("");
 			}
 
-			//System.out.println("-------------------");
-			//for (String doenca : aux)
-			//	System.out.println(doenca);
-			//System.out.println("-------------------");
 			result.add(aux);
-			//aux_obj = aux.toArray();
-			//result.add(Arrays.copyOf(aux_obj, aux_obj.length,String[].class));
+
 		}
-		
-		
 		return result;
 	}
 	
     public void createGraphic() {
     	JFrame frame = new JFrame("Possibles diseases according to the asked questions");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-        
         JTable table = new JTable(organizeData(), askedQuestionsList);
-
         JScrollPane scrollPane = new JScrollPane(table);
         frame.add(scrollPane, BorderLayout.CENTER);
-        frame.setSize(300, 150);
-        frame.setVisible(true);
+        frame.setSize(600, 150);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(this.Isvisible);
     }
 
 }
