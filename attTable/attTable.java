@@ -51,14 +51,14 @@ public class attTable implements IattTable{
 
 	public void update(int pergunta, String resposta) {
 	    this.View.updateV(this.attributes, pergunta, resposta);
-		System.out.println("instancias antes");
+		/*System.out.println("instancias antes");
     	for (int i = 0; i < instances.length ; i++) {
     		for (int j =0 ; j < instances[0].length ; j++) {
     	    	System.out.print(instances[i][j]);
 
     		}
         	System.out.println();
-    	}
+    	}*/
 		instances = redutor.novaTabela(instances, pergunta, resposta);
 		notifyReceptacle();
 	}

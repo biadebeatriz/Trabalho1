@@ -17,7 +17,7 @@ public class Consultar {
 
 // instanciando o componente paciente
         IPatient aPatient = new Patient();
-
+        
 // conectando-o no componente DataSet
         aPatient.connect(dataset);
 

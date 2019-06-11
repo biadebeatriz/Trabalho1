@@ -106,6 +106,6 @@ public class Doctor  implements IDoctor{
         boolean result = responder.finalAnswer(diagnostic);
         System.out.println("Result: " + ((result) ? "I am right =)" : "I am wrong =("));
         graphicCreator.createGraphic();
-        Diagnostic(diagnostic);
+        //Diagnostic(diagnostic);
     }
 }

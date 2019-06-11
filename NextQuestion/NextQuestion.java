@@ -24,7 +24,8 @@ public class NextQuestion implements INextQuestion{
         int ncoluna = tabela[0].length - 1;
         int cont=0,ideal=(nlinha)/2,maxf=0,colmax=0;
         
-        
+        System.out.println("----------------------------------------------------");
+
         
         for(int i=0; i<ncoluna;i++){
         	cont = 0;
@@ -33,7 +34,11 @@ public class NextQuestion implements INextQuestion{
                     cont++;
                 }
             }
-            if(Math.abs(cont-ideal)<Math.abs(maxf-ideal) && !askdQ.contains(i)){
+            System.out.println("cont do "+i+" é "+cont+"askdq é:");
+            for (int in : askdQ) {
+            	System.out.println(in);
+            }
+            if(Math.abs(cont-ideal)<=Math.abs(maxf-ideal) && !askdQ.contains(i)){
                 maxf=cont;
                 colmax=i;
             }
