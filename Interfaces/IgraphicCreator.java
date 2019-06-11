@@ -1,5 +1,4 @@
 package Interfaces;
-
 import java.util.Vector;
 
 public interface IgraphicCreator extends ITableReceptacle{
