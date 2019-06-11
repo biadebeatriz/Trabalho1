@@ -17,11 +17,13 @@ public class View implements IView{
     public View(){
         animation = new AnimationC();
         this.name = this.generateString(new Random(), "qwertyialskdcn", 10);
-        this.setView("Grupo 1", this.name + "da Silva", "Andre Santache");
+        this.setView("Grupo 1", this.name + "da Silva", "Dr Andre Santache");
         falas = new ArrayList<String>();
         personagens = new ArrayList<String>();
         falas.add("Hi");
         personagens.add("doctor");
+        falas.add("HELloW I'm sICKKKKKK");
+        personagens.add("pacient");
     }
 
 

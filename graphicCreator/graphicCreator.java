@@ -26,7 +26,7 @@ public class graphicCreator implements IgraphicCreator{
     	possibleDiseasesGrid = new Vector<Vector<String>>();
     	askedQuestionsList = new Vector<String>();
     }
-	
+
 	public Vector<String> possibleDiseases() {
 		Vector<String> result = new Vector<String>();
 		
@@ -107,8 +107,4 @@ public class graphicCreator implements IgraphicCreator{
         frame.setVisible(true);
     }
 
-    public static void main(String[] args) {
-    	
-    	System.out.println("oie");
-    }
 }

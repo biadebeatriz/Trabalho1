@@ -13,7 +13,7 @@ public class ConsultarAn {
     public static void main(){
         // instanciando o componente DataSet
         IDataSet dataset = new DataSetComponent();
-        dataset.setDataSource("/home/guiloko/eclipse-workspace/Projeto322/src/spreadsheet.csv");
+        dataset.setDataSource("/home/beatriz/IdeaProjects/Trabalho1/zombie-health-spreadsheet-ml-training.csv");
 
 // instanciando o componente paciente
         IPatient aPatient = new Patient();
