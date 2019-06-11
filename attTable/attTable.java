@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Vector;
 
-import View.IView;
+import View.*;
 import Zumbi.*;
 import zumbi.Interfaces.IRedutorPossibilidades.*;
 import Interfaces.*;
@@ -27,13 +27,14 @@ public class attTable implements IattTable{
         this.instances = producer.requestInstances();
 	}
 	
-	public void connect(IView view){
-	    this.View = view;
-    }
 
 	public void connect(IRedutorPossibilidades redutor) {
 		this.redutor = redutor;
 	}
+	
+	public void connect(IView view){
+	    this.View = view;
+    }
 	
 	public void attach(ITableReceptacle tableReceptacle) {
 		receptacles.add(tableReceptacle);

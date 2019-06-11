@@ -9,4 +9,6 @@ public interface IattTable extends ITableProducerReceptacle{
 	public void notifyReceptacle();
 	public void update(int pergunta, String resposta);
 	public void connect(IRedutorPossibilidades redutor);
+	public void connect(IView view);
+	public void giveDiagnostic(String doenca);
 }

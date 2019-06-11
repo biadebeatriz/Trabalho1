@@ -2,10 +2,10 @@ package View;
 
 import pt.clubedohardware.userinterface.AnimationC;
 import pt.clubedohardware.userinterface.IAnimationC;
-
+import Interfaces.IView;
 import java.util.Random;
 
-public class View {
+public class View implements IView{
     IAnimationC animation;
     String name;
 

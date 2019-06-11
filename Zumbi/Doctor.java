@@ -70,7 +70,6 @@ public class Doctor  implements IDoctor{
 
     public void startInterview() {
         int n_questions = 0;
-        String symptomsP[] = new String[attributes.length - 1];
         String diagnostic = "I don't know";
         
         

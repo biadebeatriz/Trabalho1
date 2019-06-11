@@ -3,6 +3,7 @@ import Interfaces.*;
 import graphicCreator.*;
 import attTable.*;
 import NextQuestion.*;
+import View.*;
 import zumbi.Interfaces.IRedutorPossibilidades.*;
 import zumbi.Componentes.*;
 import zumbi.Componentes.RedutorPossibilidades.FabricaRedutor;
@@ -33,11 +34,16 @@ public class Consultar {
 // conectando-a a componente dataset        
         nextQuestion.connect(dataset);
         
+        IView view = new View();
+        
+        
 // Instanciando o componente attTable
         IattTable attTable = attTableFactory.create();       
 // Conectando-o ao componente dataset e redutor        
         attTable.connect(dataset);
-        attTable.connect(redutor);       
+        attTable.connect(redutor);
+        attTable.connect(view);
+        
 // Conectando-o ao componente graphiccreator e nextQuestion, segundo o pattern Observer        
         attTable.attach(cgraphic);
         attTable.attach(nextQuestion);
