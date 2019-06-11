@@ -75,16 +75,14 @@ public class Doctor  implements IDoctor{
         
         while ((graphicCreator.possibleDiseases()).size() > 1 && n_questions < attributes.length - 1) {
         	next_q = nextQuestion.nextQ();
-        	System.out.println("foi perguntada a doença " + next_q);
         	attTable.update(next_q, responder.ask(attributes[next_q]));
         	graphicCreator.update(attributes[next_q]);
-        	System.out.println("Agora há " +(graphicCreator.possibleDiseases()).size()+ "doenças possíveis");
             n_questions++;
         }
         if ((graphicCreator.possibleDiseases()).size() <= 1) { // Só sobrou uma doença possível
         	diagnostic = graphicCreator.possibleDiseases().get(0);
         } else {
-        	System.out.println("Duas ou mais possibilidades");
+        	System.out.println("Duas ou mais possibilidades, então é provável que a doença seja a que tem mais casos");
         	// O diagnóstico será a doença que aparece mais vezes
         	countDiseases();
     		String m_freq = "";
@@ -98,14 +96,10 @@ public class Doctor  implements IDoctor{
         	diagnostic = m_freq;
         }
 
-        
-        for (int a = 0; a < attributes.length - 1; a++)
-            System.out.println("Question: " + responder.ask(attributes[a]));
-
         System.out.println("Disease guess: " + diagnostic);
         boolean result = responder.finalAnswer(diagnostic);
         System.out.println("Result: " + ((result) ? "I am right =)" : "I am wrong =("));
         graphicCreator.createGraphic();
-        //Diagnostic(diagnostic);
+        Diagnostic(diagnostic);
     }
 }

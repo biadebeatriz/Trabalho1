@@ -3,29 +3,32 @@ package View;
 import pt.clubedohardware.userinterface.AnimationC;
 import pt.clubedohardware.userinterface.IAnimationC;
 import Interfaces.IView;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class View implements IView{
     IAnimationC animation;
     String name;
+    ArrayList<String> falas;
+    ArrayList<String> personagens;
 
     public View(){
         animation = new AnimationC();
-        this.begin();
-        this.name = this.generateString(new Random(), "qwerty^%#78ials7007323kdcn123", 10);
-        this.setView("Grupo 1", this.name, "Andre Santache");
+        this.name = this.generateString(new Random(), "qwertyialskdcn", 10);
+        this.setView("Grupo 1", this.name + "da Silva", "Andre Santache");
+        falas = new ArrayList<String>();
+        personagens = new ArrayList<String>();
+        falas.add("Hi");
+        personagens.add("doctor");
     }
+
 
     public void setView(String win, String pacient, String doctor){
         this.animation.setDocName(doctor);
         this.animation.setPacientName(pacient);
         this.animation.setWindowName(win);
-    }
-
-    public void begin(){
-        String[] falas = {"Hii, whats wrong?", "Estou doente ASFUCK"};
-        String[] personagens = {"doctor", "pacient"};
-        animation.story(falas, personagens);
     }
 
     private String generateString(Random rng, String characters, int length)
@@ -39,15 +42,13 @@ public class View implements IView{
     }
 
     public void diagnostico(String doenca){
-        String[] falas;
-        if(doenca.equals("nothing")){
-            falas = new String[]{"You're very health zumbi", "EBA"};
-        }
-        else{
-            falas = new String[]{"You have" + doenca, "I'DONT CAREEE KKKK"};
-        }
-        String[] pers = {"doctor", "pacient"};
-        animation.story(falas, pers);
+        falas.add("Your disease is " + doenca);
+        personagens.add("doctor");
+        falas.add("OMG VOU TE  COMER");
+        personagens.add("pacient");
+        String[] f = this.falas.toArray(new String[0]);
+        String[] p = this.personagens.toArray(new String[0]);
+        this.animation.story(f, p);
     }
 
     public void updateV(String[] atributos, int pergunta, String resp){
@@ -57,11 +58,12 @@ public class View implements IView{
             resposta = " Yes ):";
         }
         else{
-            resposta = " No ):";
+            resposta = " No";
         }
-        String[] falas_atua = {"Do you have"+ ask+ "?", resposta};
-        String[] personagens_atual = {"doctor", "pacient"};
-        animation.story(falas_atua, personagens_atual);
+        this.falas.add("Do you have " + ask+ "?");
+        this.personagens.add("doctor");
+        this.falas.add(resposta);
+        this.personagens.add("pacient");
     }
 
 }
